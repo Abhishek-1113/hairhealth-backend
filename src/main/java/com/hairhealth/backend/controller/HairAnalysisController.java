@@ -5,6 +5,7 @@ import com.hairhealth.backend.service.HairAnalysisService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.hairhealth.backend.dto.HairAnalysisDTO;
 
 import java.util.List;
 
@@ -17,8 +18,8 @@ public class HairAnalysisController {
 
     // 🔹 Create / Save data
     @PostMapping
-    public HairAnalysis save(@Valid @RequestBody HairAnalysis hairAnalysis) {
-        return service.save(hairAnalysis);
+    public HairAnalysis save(@Valid @RequestBody HairAnalysisDTO dto) {
+        return service.save(dto);
     }
 
     // 🔹 Get all records
